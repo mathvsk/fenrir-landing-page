@@ -13,7 +13,7 @@ body {
   overflow-x: hidden; 
 }
 
-body, input, button {
+body, input, button, a {
   font-family: var(--font-default);
   color: #000;
   position: relative;

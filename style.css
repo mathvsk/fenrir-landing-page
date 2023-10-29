@@ -1,6 +1,14 @@
 @import 'default.css';
 @import 'animation.css';
 
+html {
+  scroll-behavior: smooth;
+}
+
+* [data-visible="desktop"] {
+  display: none;
+}
+
 #app-container {
   min-height: 100vh;
   margin: 4.69rem 5.5rem 0;
@@ -44,8 +52,8 @@ main {
     flex-direction: column;
 
     position: absolute;
-    top: 14.37rem; 
-    left: 1.44rem; 
+    top: 14.37rem;
+    left: 1.44rem;
 
     & span {
       font-size: 5.625rem;
@@ -60,12 +68,12 @@ main {
   }
 }
 
-.products  {
+.products {
   margin-bottom: 12.3rem;
 
   & h2 {
     color: #242424;
-    font-size: 1.875rem;
+    font-size: 2.5rem;
     font-weight: 600;
     letter-spacing: 0.375rem;
     text-transform: uppercase;
@@ -81,18 +89,54 @@ main {
   gap: 7.5rem;
 
   & .card {
-    & img {
-      margin-bottom: 3.75rem;
+    width: 27.125rem;
+
+    display: flow-root;
+
+    & swiper-container {
+      width: 100%;
+    }
+
+    & .mySwiper2,
+    & .mySwiper3,
+    & .mySwiper4,
+    & .mySwiper5,
+    & .mySwiper6,
+    & .mySwiper7 {
+      margin-top: 2.77rem;
+
+      & img {
+        width: 90.272px;
+      }
+
+      & swiper-slide {
+        opacity: 0.4;
+      }
+
+      & .swiper-slide-thumb-active {
+        opacity: 1;
+      }
+    }
+
+    & swiper-slide img {
+      width: 100%;
+    }
+
+    & swiper-container::part(button-next),
+    swiper-container::part(button-prev) {
+      color: rgba(159, 159, 159, 0.30);
+      width: 17px;
+      height: 30px;
     }
 
     & h3 {
       font-size: 1.25rem;
-      font-weight: 600;   
+      font-weight: 600;
 
-      margin-bottom: 1.2rem;
+      margin: 3.6rem 0 1.19rem;
     }
 
-    & > div {
+    & .container-info {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -107,10 +151,89 @@ main {
           font-size: 1.375rem;
           font-weight: 600;
         }
+      }
 
-        & label {
-          font-size: 1.25rem;
-          font-weight: 700;
+      & .container-select {
+        & #category-select {
+          display: flex;
+          align-items: center;
+          gap: 0.56rem;
+
+          & label {
+            font-size: 1.25rem;
+            font-weight: 700;
+
+            cursor: pointer;
+          }
+
+          & #options-view-button:checked+#select-button #chevrons [data-lucide="chevron-down"] {
+            display: none;
+          }
+
+          & #options-view-button:checked+#select-button #chevrons [data-lucide="chevron-up"] {
+            display: block;
+          }
+
+          & #options-view-button {
+            all: unset;
+          }
+
+          &:has(#options-view-button:checked)+#option {
+            display: block;
+          }
+        }
+
+        & #chevrons {
+          display: flex;
+
+          & svg {
+            width: 1rem;
+            height: 1rem;
+          }
+
+          & [data-lucide="chevron-up"] {
+            display: none;
+          }
+        }
+
+        & #option {
+          margin-top: 0.75rem;
+
+          width: 11.75rem;
+
+          display: none;
+
+          z-index: 1;
+          position: absolute;
+
+          & span {
+            font-size: 0.875rem;
+            font-weight: 700;
+          }
+
+          & .option {
+            position: relative;
+
+            list-style: none;
+            padding: 0.625rem;
+
+            border-radius: 10px;
+            background-color: #fff;
+
+            &:has(input:checked),
+            &:hover {
+              background: #EBE7E7;
+            }
+
+
+            & input[type="radio"] {
+              all: unset;
+              inset: 0;
+
+              position: absolute;
+              cursor: pointer;
+            }
+          }
         }
       }
 
@@ -126,9 +249,9 @@ main {
         font-size: 1.125rem;
         font-weight: 600;
         text-transform: uppercase;
-        
+
         padding: 0.75rem 1.35rem;
-        
+
         border-radius: 10px;
         border: 1px solid #000;
         background: #000;
@@ -164,34 +287,34 @@ main {
     font-weight: 600;
     letter-spacing: 0.5rem;
     text-transform: uppercase;
-    
+
     margin-bottom: 4.7rem;
   }
 
-  & .materials-container { 
+  & .materials-container {
+    display: flex;
+    position: relative;
+
+    &>div {
       display: flex;
-      position: relative;
+      flex-direction: column;
+      gap: 2.8125rem;
 
-      & > div {
-        display: flex;
-        flex-direction: column;
-        gap: 2.8125rem;
+      width: 36.125rem;
 
-        width: 36.125rem;
-
-        & p { 
-          color: #232324;
-          font-size: 1.5625rem;
-          font-weight: 300;
-        }
+      & p {
+        color: #232324;
+        font-size: 1.5625rem;
+        font-weight: 300;
       }
+    }
 
-      & img {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: -5.5rem;
-      }
+    & img {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: -5.5rem;
+    }
   }
 }
 
@@ -207,9 +330,9 @@ main {
     right: -5.5rem;
     height: 100%;
     background-size: cover;
-    animation: backgroundAnimation 2500ms infinite ease-out;
+    animation: backgroundAnimation 4s infinite ease-in-out;
     animation-delay: 1ms;
-  
+
     z-index: -1;
   }
 
@@ -239,7 +362,7 @@ main {
   }
 }
 
-.values  {
+.values {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
@@ -262,7 +385,8 @@ main {
     gap: 2.5rem;
     width: 57.5rem;
 
-    &:nth-child(2), &:nth-child(3) {
+    &:nth-child(2),
+    &:nth-child(3) {
       width: 46.75rem;
     }
 
@@ -270,7 +394,7 @@ main {
       display: flex;
       align-items: baseline;
       gap: 1.5rem;
-      
+
 
       & div {
         display: flex;
@@ -298,12 +422,16 @@ main {
 
   & .circle {
     position: absolute;
-    top: -12px; /* Ajuste a posição vertical conforme necessário */
-    left: 2121px; /* Posiciona o círculo à direita */
-    transform: translate(0, -50%); /* Centraliza verticalmente */
+    top: -12px;
+    /* Ajuste a posição vertical conforme necessário */
+    left: 2121px;
+    /* Posiciona o círculo à direita */
+    transform: translate(0, -50%);
+    /* Centraliza verticalmente */
     transform-origin: center;
     animation: rotate 60s linear infinite;
-    overflow: visible; /* Permite que o círculo ultrapasse os limites da tela */
+    overflow: visible;
+    /* Permite que o círculo ultrapasse os limites da tela */
     z-index: -2;
   }
 }

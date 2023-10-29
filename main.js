@@ -1,1 +1,2 @@
-import tailwind from "./tailwind";
+
+  lucide.createIcons();
