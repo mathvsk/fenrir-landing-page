@@ -1,0 +1,23 @@
+@keyframes backgroundAnimation {
+  0% {
+      background-image: url('assets/default.png');
+  }
+  33% {
+      background-image: url('assets/variant-2.png');
+  }
+  66% {
+      background-image: url('assets/variant-3.png');
+  }
+  100% {
+      background-image: url('assets/default.png');
+  }
+}
+
+@keyframes rotate {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+}

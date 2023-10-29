@@ -1,0 +1,88 @@
+@media (min-width: 1728px) {
+  header {
+    justify-content: space-between;
+
+    & nav {
+      display: flex;
+      gap: 5rem;
+
+      text-transform: uppercase;
+      font-size: 1.125rem;
+      letter-spacing: 0.225rem;
+    }
+  }
+
+  main {
+    & .banner {
+      background-image: url(assets/banner_desktop.png);
+    }
+
+  }
+
+  .products  {
+    & h2 {
+      font-size: 2.5rem;
+      letter-spacing: 0.5rem;
+    }
+  }
+
+  .card-container {
+    grid-template-columns: repeat(3, max-content);
+
+    & .card {
+      & h3 {
+        font-size: 1.375rem;
+  
+        margin-bottom: 1.2rem;
+      }
+
+      & > div {
+        & span {
+          font-size: 1.625rem;
+        }
+  
+        & button {
+          width: 10.3125rem;
+          height: 3.0625rem;
+          
+          font-size: 1.25rem;
+  
+        }
+      }
+
+      & button {
+        width: 9.9375rem;
+        height: 2.125rem;
+  
+        font-size: 0.9375rem;
+      }
+    }
+  }
+
+  .materials {
+
+    & .materials-container {
+      & > div {
+        width: 64.875rem;
+      }
+    }
+  }
+
+  .about {
+    & p {
+      width: 100%;
+    }
+  }
+
+  .values  {
+    position: relative;
+
+    & .values-container, & .values-container:nth-child(2), & .values-container:nth-child(3) {
+      width: 61.8125rem;
+    }
+  }
+
+  .values .circle {
+    left: 2500px;
+  }
+}

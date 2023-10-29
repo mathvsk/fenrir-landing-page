@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  --webkit-font-smoothing: antialiased;
+
+  --font-default: 'Montserrat', sans-serif;
+}
+
+body {
+  overflow-x: hidden; 
+}
+
+body, input, button {
+  font-family: var(--font-default);
+  color: #000;
+  position: relative;
+}
+
