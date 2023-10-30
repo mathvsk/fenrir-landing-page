@@ -1,2 +1,1 @@
-
-  lucide.createIcons();
+// lucide.createIcons();
