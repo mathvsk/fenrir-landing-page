@@ -9,9 +9,14 @@ html {
   display: none;
 }
 
+body,html {
+  overflow-x: hidden;
+}
+
 #app-container {
   min-height: 100vh;
-  margin: 4.69rem 5.5rem 0;
+  max-width: 904px;
+  margin: 4.69rem auto 0;
 }
 
 header {
@@ -166,19 +171,39 @@ main {
             cursor: pointer;
           }
 
-          & #options-view-button:checked+#select-button #chevrons [data-lucide="chevron-down"] {
+          & #product-1:checked+#select-button #chevrons [data-lucide="chevron-down"],
+          & #product-2:checked+#select-button #chevrons [data-lucide="chevron-down"], 
+          & #product-3:checked+#select-button #chevrons [data-lucide="chevron-down"], 
+          & #product-4:checked+#select-button #chevrons [data-lucide="chevron-down"], 
+          & #product-5:checked+#select-button #chevrons [data-lucide="chevron-down"], 
+          & #product-6:checked+#select-button #chevrons [data-lucide="chevron-down"] {
             display: none;
           }
 
-          & #options-view-button:checked+#select-button #chevrons [data-lucide="chevron-up"] {
+          & #product-1:checked+#select-button #chevrons [data-lucide="chevron-up"],
+          & #product-2:checked+#select-button #chevrons [data-lucide="chevron-up"],
+          & #product-3:checked+#select-button #chevrons [data-lucide="chevron-up"],
+          & #product-4:checked+#select-button #chevrons [data-lucide="chevron-up"],
+          & #product-5:checked+#select-button #chevrons [data-lucide="chevron-up"],
+          & #product-6:checked+#select-button #chevrons [data-lucide="chevron-up"] {
             display: block;
           }
 
-          & #options-view-button {
+          & #product-1,
+          & #product-2,
+          & #product-3,
+          & #product-4,
+          & #product-5,
+          & #product-6 {
             all: unset;
           }
 
-          &:has(#options-view-button:checked)+#option {
+          &:has(#product-1:checked)+#option-1,
+          &:has(#product-2:checked)+#option-2,
+          &:has(#product-3:checked)+#option-3,
+          &:has(#product-4:checked)+#option-4,
+          &:has(#product-5:checked)+#option-5,
+          &:has(#product-6:checked)+#option-6 {
             display: block;
           }
         }
@@ -196,7 +221,7 @@ main {
           }
         }
 
-        & #option {
+        & .option-container {
           margin-top: 0.75rem;
 
           width: 11.75rem;
@@ -326,10 +351,11 @@ main {
     content: "";
     position: absolute;
     top: 0;
-    left: -5.5rem;
-    right: -5.5rem;
-    height: 100%;
+    left: -50vw;
+    right: -50vw;
+    bottom: 0;
     background-size: cover;
+    overflow: hidden;
     animation: backgroundAnimation 4s infinite ease-in-out;
     animation-delay: 1ms;
 
