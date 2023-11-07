@@ -94,7 +94,7 @@ main {
   gap: 7.5rem;
 
   & .card {
-    width: 27.125rem;
+    width: 23.125rem;
 
     display: flow-root;
 
@@ -318,7 +318,7 @@ main {
 
   & .materials-container {
     display: flex;
-    position: relative;
+    /* position: relative; */
 
     &>div {
       display: flex;
@@ -336,9 +336,9 @@ main {
 
     & img {
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      right: -5.5rem;
+      top: 44.5%;
+      /* transform: translateY(-50%); */
+      right: 0;
     }
   }
 }
